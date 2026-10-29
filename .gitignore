@@ -1,0 +1,35 @@
+# --- Gradle ---
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+gradle-app.setting
+
+# --- IDE (IntelliJ IDEA) ---
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# --- IDE (Eclipse) ---
+.settings/
+.classpath
+.project
+bin/
+
+# --- Minecraft / NeoForge ---
+run/
+runs/
+run-data/
+logs/
+*.log
+local.properties
+src/generated/resources/.cache
+src/main/resources/electrovox.refmap.json
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Прочее ---
+*.hprof
