@@ -1,0 +1,42 @@
+// ПУТЬ: electrovox/build.gradle
+plugins {
+    id 'java-library'
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.neoforged.moddev'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+// Настройка Java 21, так как Minecraft 1.21.1 требует эту версию
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+neoForge {
+    // Указываем версию NeoForge из gradle.properties
+    version = project.neo_version
+    // Включаем генерацию данных (датаген)
+    // runs {
+    //     data {
+    //         data()
+    //         programArguments.addAll '--mod', project.mod_id, '--all',
+    //                 '--output', file('src/generated/resources/').getAbsolutePath(),
+    //                 '--existing', file('src/main/resources/').getAbsolutePath()
+    //     }
+    // }
+}
+
+// --- Зависимости ---
+dependencies {
+    // Здесь будут зависимости от Create и CEE.
+    // Пример:
+    // implementation "com.simibubi.create:create-1.21.1:6.0.0:all"
+    // implementation "com.george_vi:electroenergetics:0.5.0"
+}
