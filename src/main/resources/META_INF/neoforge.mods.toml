@@ -1,0 +1,71 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "electrovox"
+version = "${version}"
+displayName = "Electrovox"
+authors = "electrovox"
+description = '''
+Voxel-style wire rendering and anchoring for Create: Electro Energetics.
+Ordinary wires keep the addon look; hold the voxel key with a spool in hand to
+lay a wire as snapped 1/16-block cubes, preview the route before clicking, and
+place a connector on any surface. Tapping a wire splices a connector into it.
+Survival mode charges the same items as the addon: one connector per anchor and
+one spool per run, with the price shown above the hotbar.
+'''
+
+[[mixins]]
+config = "electrovox.mixins.json"
+
+[[dependencies.electrovox]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.219,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.electrovox]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.electrovox]]
+modId = "create"
+type = "required"
+versionRange = "[6.0.7,6.1.0)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.electrovox]]
+modId = "flywheel"
+type = "required"
+versionRange = "[1.0.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.electrovox]]
+modId = "electroenergetics"
+type = "required"
+versionRange = "[1.21.1-1.1.4,)"
+ordering = "AFTER"
+side = "BOTH"
+
+# Sable and Create: Aeronautics are optional. Wires on sub-levels work through
+# Electro Energetics' own Sable integration, so neither is a hard requirement.
+[[dependencies.electrovox]]
+modId = "sable"
+type = "optional"
+versionRange = "[2.0.0,3.0.0)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.electrovox]]
+modId = "aeronautics_bundled"
+type = "optional"
+versionRange = "[1.3.0,)"
+ordering = "AFTER"
+side = "BOTH"
