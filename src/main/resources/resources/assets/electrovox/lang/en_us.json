@@ -1,0 +1,16 @@
+{
+  "key.electrovox.category": "Electrovox",
+  "key.electrovox.alternate_path": "Voxel wire mode (hold while wiring)",
+  "hud.electrovox.voxel_mode": "Voxel mode (%s)",
+  "hud.electrovox.cost_anchor": "Anchor: %s",
+  "hud.electrovox.cost_run": "%s + %s, %.1f m",
+  "hud.electrovox.cost_too_long": "Too long: %.1f m (max %.0f m)",
+  "hud.electrovox.connector_count": "%s connector",
+  "hud.electrovox.need_connector": "Need %s",
+  "hud.electrovox.need_run": "Need %s + %s",
+  "electrovox.msg.not_enough": "Not enough connectors or wire",
+  "electrovox.msg.too_long": "Wire too long for this type",
+  "electrovox.msg.too_far": "That point is too far away",
+  "electrovox.msg.stale_node": "The selected node is gone",
+  "electrovox.msg.wire_gone": "That wire is already gone"
+}
