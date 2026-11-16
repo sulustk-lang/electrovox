@@ -1,12 +1,9 @@
-// ПУТЬ: electrovox/settings.gradle
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         maven { url = 'https://maven.neoforged.net/releases' }
-        mavenLocal()
+        gradlePluginPortal()
+        mavenCentral()
     }
 }
 
-plugins {
-    id 'net.neoforged.moddev' version '2.0.123' apply false
-}
+rootProject.name = 'electrovox'
