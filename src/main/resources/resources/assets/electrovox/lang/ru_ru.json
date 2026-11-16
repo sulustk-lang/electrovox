@@ -1,0 +1,16 @@
+{
+  "key.electrovox.category": "Electrovox",
+  "key.electrovox.alternate_path": "Режим воксельных проводов (удерживать при прокладке)",
+  "hud.electrovox.voxel_mode": "Воксельный режим (%s)",
+  "hud.electrovox.cost_anchor": "Анкер: %s",
+  "hud.electrovox.cost_run": "%s + %s, %.1f м",
+  "hud.electrovox.cost_too_long": "Слишком длинно: %.1f м (макс. %.0f м)",
+  "hud.electrovox.connector_count": "%s коннектор",
+  "hud.electrovox.need_connector": "Нужен %s",
+  "hud.electrovox.need_run": "Нужен %s + %s",
+  "electrovox.msg.not_enough": "Не хватает коннекторов или провода",
+  "electrovox.msg.too_long": "Провод слишком длинный для этого типа",
+  "electrovox.msg.too_far": "Эта точка слишком далеко",
+  "electrovox.msg.stale_node": "Выбранный узел исчез",
+  "electrovox.msg.wire_gone": "Этот провод уже удалён"
+}
