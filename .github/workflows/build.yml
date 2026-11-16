@@ -29,12 +29,6 @@ jobs:
         
       - name: Grant execute permission
         run: chmod +x ./gradlew
-
-      - name: Grant execute permission mod jars
-        run: chmod +x ./fetch-libs.sh
-
-      - name: Fetch third-party mod jars
-        run: ./fetch-libs.sh
       
       - name: Build
         run: ./gradlew build --no-daemon
