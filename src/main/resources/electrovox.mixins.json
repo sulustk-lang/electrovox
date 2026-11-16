@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.electrovox.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "WireRendererMixin",
+    "WireRendererAccessor"
+  ],
+  "mixins": [
+    "InWorldNodeDataAccessor",
+    "WireSimulationStateMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
