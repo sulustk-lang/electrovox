@@ -45,7 +45,7 @@ attachment point.
 | NeoForge | 21.1.219 or newer |
 | Create | 6.0.7 – 6.1.0 |
 | Create: Electro Energetics | 1.21.1-1.1.4 or newer |
-| Sable | optional, 2.0.0 – 3.0.0 |
+| Sable | optional, 2.0.0 – 3.0.0 or newer|
 | Create: Aeronautics | optional, 1.3.0 or newer |
 
 Sable and Create: Aeronautics are optional. Without them nothing changes. With
