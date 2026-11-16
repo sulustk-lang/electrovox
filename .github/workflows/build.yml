@@ -27,9 +27,6 @@ jobs:
           key: gradle-${{ runner.os }}-${{ hashFiles('gradle.properties', 'settings.gradle', 'build.gradle', 'gradle/wrapper/gradle-wrapper.properties') }}
           restore-keys: gradle-${{ runner.os }}-
 
-      - name: Fetch third-party mod jars
-        run: ./fetch-libs.sh
-
       - name: Build
         run: ./gradlew build --no-daemon
 
