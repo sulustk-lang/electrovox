@@ -1,42 +1,73 @@
-// ПУТЬ: electrovox/build.gradle
 plugins {
-    id 'java-library'
-    id 'eclipse'
-    id 'idea'
-    id 'maven-publish'
-    id 'net.neoforged.moddev'
+    id 'java'
+    id 'net.neoforged.moddev' version '2.0.107'
 }
 
-version = mod_version
-group = mod_group_id
+version = project.mod_version
+group = project.mod_group
+base { archivesName = project.mod_id }
 
-base {
-    archivesName = mod_id
-}
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
-// Настройка Java 21, так как Minecraft 1.21.1 требует эту версию
-java {
-    toolchain.languageVersion = JavaLanguageVersion.of(21)
+repositories {
+    maven { url = 'https://maven.neoforged.net/releases' }
+    maven { url = 'https://maven.createmod.net' }
+    mavenCentral()
 }
 
 neoForge {
-    // Указываем версию NeoForge из gradle.properties
     version = project.neo_version
-    // Включаем генерацию данных (датаген)
-    // runs {
-    //     data {
-    //         data()
-    //         programArguments.addAll '--mod', project.mod_id, '--all',
-    //                 '--output', file('src/generated/resources/').getAbsolutePath(),
-    //                 '--existing', file('src/main/resources/').getAbsolutePath()
-    //     }
-    // }
+
+    runs {
+        client {
+            client()
+            jvmArguments.addAll('-Dmixin.debug.verbose=true', '-Dmixin.debug.export=true')
+            programArguments.addAll('--quickPlaySingleplayer', 'evtest')
+        }
+        server {
+            server()
+        }
+    }
+
+    mods {
+        electrovox {
+            sourceSet sourceSets.main
+        }
+    }
 }
 
-// --- Зависимости ---
 dependencies {
-    // Здесь будут зависимости от Create и CEE.
-    // Пример:
-    // implementation "com.simibubi.create:create-1.21.1:6.0.0:all"
-    // implementation "com.george_vi:electroenergetics:0.5.0"
+    // Third-party mod jars are not committed. Run ./fetch-libs.sh once.
+    fileTree('libs').matching { include '*.jar' }.each { jar ->
+        if (jar.name.startsWith('sable-companion')) {
+            compileOnly files(jar)
+        } else {
+            implementation files(jar)
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+processResources {
+    inputs.property 'version', project.mod_version
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand version: project.mod_version
+    }
+}
+
+jar {
+    manifest {
+        attributes([
+            'Specification-Title'    : project.mod_id,
+            'Specification-Vendor'   : project.mod_group,
+            'Specification-Version'  : '1',
+            'Implementation-Title'   : project.name,
+            'Implementation-Version' : project.version,
+            'Implementation-Vendor'  : project.mod_group
+        ])
+    }
 }
